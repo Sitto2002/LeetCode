@@ -1,0 +1,36 @@
+class Solution {
+public:
+    int lengthOfLongestSubstring(string s) 
+    {
+        set<char> st;
+        int count=0;
+        int size=0;
+        int maxcount=0;
+        int k=1;
+        
+        for(int i=0;i<s.size();i++)
+        {
+            char ch=s[i];
+            st.insert(ch);
+            size++;
+            if(size==st.size())
+            {
+                count++;
+            }
+            else
+            {
+                count=0;
+                size=0;
+                st.clear();
+                i=k-1;
+                k++;
+            }
+           
+            maxcount=max(maxcount,count);
+            
+        }
+        return maxcount;
+        
+        
+    }
+};

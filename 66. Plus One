@@ -1,0 +1,20 @@
+class Solution {
+public:
+    vector<int> plusOne(vector<int>& digits) {
+        int len=digits.size()-1;
+        int i=len;  
+        while(i>=0){
+            if(digits[i]==9){
+                digits[i]=0;
+            }
+            else{
+                digits[i]++;
+                return digits;
+            }
+            i--;
+        }
+        digits.insert(digits.begin(),1); //case where digits is 9 (so after one iteration the lopp will end and we will left with 0 so for nine we have to make 10 so we gotta insert one the the beginning of the loop)
+        return digits;
+        
+    }
+};

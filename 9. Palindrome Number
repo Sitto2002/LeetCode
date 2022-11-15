@@ -1,0 +1,21 @@
+class Solution {
+public:
+    bool isPalindrome(int x) {
+        string st = to_string(x);
+        int front=0;
+        int last = st.length()-1;
+        if(st.size()==1){
+            return true;
+        }
+        while(front<last){
+            if(st[front]!=st[last]){
+                return false;
+            }
+            else{
+                front++;
+                last--;
+            }
+        }
+        return true;
+    }
+};

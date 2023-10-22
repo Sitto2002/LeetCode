@@ -1,0 +1,1 @@
+int HexToDec (string num) {
